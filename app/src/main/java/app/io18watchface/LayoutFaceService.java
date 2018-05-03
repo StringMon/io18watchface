@@ -40,7 +40,6 @@ import android.view.SurfaceHolder;
 import android.view.View;
 import android.view.WindowInsets;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -131,7 +130,7 @@ public class LayoutFaceService extends CanvasWatchFaceService {
 
             for (LottieAnimationView digitView : digitViews) {
                 // Set up Lottie for each digit
-                digitView.useHardwareAcceleration();
+                digitView.useHardwareAcceleration();    // seems to help, but tough to tell
                 digitView.addAnimatorListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationEnd(Animator animation) {
@@ -270,6 +269,11 @@ public class LayoutFaceService extends CanvasWatchFaceService {
                 digitViews[4].setVisibility(View.VISIBLE);
                 digitViews[5].setVisibility(View.VISIBLE);
                 updateDigits(4);
+
+//                // Keep watch awake for video filming
+//                ((PowerManager) getSystemService(Context.POWER_SERVICE))
+//                        .newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "foo")
+//                        .acquire(30000);
             }
 
             // Whether the timer should be running depends on whether we're visible (as well as
