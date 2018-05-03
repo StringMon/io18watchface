@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:gravity="center"
+    tools:deviceIds="wear">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:minHeight="30dp"
+        android:src="@drawable/io_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/hourTens"
+        app:layout_constraintDimensionRatio="1" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/hourTens"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintBottom_toTopOf="@+id/secondTens"
+        app:layout_constraintDimensionRatio="0.62"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/hourOnes"
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/hourOnes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toEndOf="@+id/hourTens"
+        app:layout_constraintEnd_toStartOf="@+id/minuteTens"
+        app:layout_constraintTop_toTopOf="@+id/hourTens"
+        app:layout_constraintBottom_toBottomOf="@+id/hourTens"
+        app:layout_constraintDimensionRatio="0.62" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/minuteTens"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/hourTens"
+        app:layout_constraintDimensionRatio="0.62"
+        app:layout_constraintEnd_toStartOf="@+id/minuteOnes"
+        app:layout_constraintStart_toEndOf="@+id/hourOnes"
+        app:layout_constraintTop_toTopOf="@+id/hourTens"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/minuteOnes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintStart_toEndOf="@+id/minuteTens"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/hourTens"
+        app:layout_constraintBottom_toBottomOf="@+id/hourTens"
+        app:layout_constraintDimensionRatio="0.62" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/secondTens"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="@id/hourOnes"
+        app:layout_constraintEnd_toStartOf="@+id/secondOnes"
+        app:layout_constraintTop_toBottomOf="@+id/hourTens"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="0.62"
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/secondOnes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="@id/minuteTens"
+        app:layout_constraintStart_toEndOf="@+id/secondTens"
+        app:layout_constraintTop_toTopOf="@+id/secondTens"
+        app:layout_constraintBottom_toBottomOf="@+id/secondTens"
+        app:layout_constraintDimensionRatio="0.62"
+        />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,17 @@
+desktop.ini
+*.iml
+*.apk
+*.hprof
+.gradle
+/local.properties
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+/meta/archive
+/meta/backup
+/meta/releases
+*.keystore

@@ -1,0 +1,28 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "app.io18watchface"
+        minSdkVersion 23
+        targetSdkVersion 27
+        versionCode 10000
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.google.android.support:wearable:2.3.0'
+    implementation 'com.android.support:wear:27.1.1'
+    implementation 'com.airbnb.android:lottie:2.5.4'
+    compileOnly 'com.google.android.wearable:wearable:2.3.0'
+}
+
+apply from: "../../Common/apk_naming.gradle"
